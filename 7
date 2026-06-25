@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[100] = {10, 20, 30, 40, 50};
+    int n = 5, i;
+    int pos = 3, value = 25; // Insert 25 at position 3
+
+    // Insert Operation
+    for(i = n; i >= pos; i--)
+    {
+        arr[i] = arr[i - 1];
+    }
+    arr[pos - 1] = value;
+    n++;
+
+    printf("Array after Insertion:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Delete Operation (Delete element at position 4)
+    pos = 4;
+    for(i = pos - 1; i < n - 1; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    n--;
+
+    printf("\n\nArray after Deletion:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // Display Operation
+    printf("\n\nFinal Array:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
